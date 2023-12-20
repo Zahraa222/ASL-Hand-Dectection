@@ -23,7 +23,11 @@ while True:
             #extract the information of each visible hand (coordinates)
             for id,landmark in enumerate(handLms.landmark):
                 print(id, landmark)
-            
+                height, width, imgchannels=img.shape
+                cposX, cposY = int(landmark, cposX*width), int (cposY*height)
+                print(id, cposX, cposY) #will print position of every landmark if id is not included
+                if id ==0: #will highlight the specified landmark on screen, usefule for extracting data of only 1 part of the hand
+                    cv2.circle(img, (cposX, cposY), 15, (255,0,255), cv2.FILLED)
 
 
 
