@@ -59,6 +59,7 @@ class handDetection():
                             myHand["Type"] = "Left"
                         else:
                             myHand["Type"] = "Right"
+                allHands.append(myHand)
 
                 if draw:
                     self.mpDraw.draw_landmarks(img, handLandmarks, self.mpHands.HAND_CONNECTIONS)
