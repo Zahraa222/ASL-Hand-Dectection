@@ -2,10 +2,17 @@ import cv2
 import HandTrackModule as htm
 import numpy as np
 import math
+import time
 
 cap = cv2.VideoCapture(0)
 detector = htm.handDetection(maxHands=1) #working with 1 hand
 offset = 20
+
+
+
+
+folder = "Data/A"
+counter = 0
 
 while True:
     success, img = cap.read()
@@ -43,4 +50,9 @@ while True:
 
         cv2.waitKey(1)
     cv2.imshow("Image", img)
-    cv2.waitKey(1)
+    key = cv2.waitKey(1)
+
+    if key == ord("s"): #save image to folder the 's' key is clicked
+        counter += 1
+        cv2.imwrite(f'{folder}/Image_{time.time()}.jpg', imgWhite)
+        print(counter)
