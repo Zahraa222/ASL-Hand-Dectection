@@ -11,7 +11,7 @@ offset = 20
 
 
 
-folder = "Data/C"
+folder = "Data/A"
 counter = 0
 
 while True:
