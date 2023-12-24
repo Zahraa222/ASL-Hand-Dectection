@@ -11,7 +11,7 @@ offset = 20
 
 
 
-folder = "Data/A"
+folder = "Data/O"
 counter = 0
 
 while True:
@@ -37,7 +37,7 @@ while True:
             imgWhite[:, widthGap:widthCalculated+widthGap] = imgResize #width + gap to center the image, will generate cropped image with white background
         else:
             k = 300 / w #stretch width to image size
-            heightCalculated = math.ceil(k * w)
+            heightCalculated = math.ceil(k * h)
             imgResize = cv2.resize(imgCrop, (300, heightCalculated))
             imgResizeShape = imgResize.shape
             heightGap = math.ceil((300 - heightCalculated )/ 2)
